@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        
+        <title>Aranastore</title>
+        
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+
+            <div class="container">
+                <a href="layout.html" >
+                    <div class="logo">
+                        <h1>Aranastore</h1>
+                        <h2>.COM</h2>
+                    </div> 
+                </a>
+            
+                <form class="search" method="GET" action="search">
+                    <input 
+                        type="text"
+                        name="filter"
+                        placeholder="Buscar por produtos"
+                        
+                    ><!--{% if search.term %}
+                            value= {{search.term}}
+                        {%endif%}}-->
+                </form>
+        
+                <nav class="primary">
+                    <ul>
+                        <li>
+                            <a href="livros.html">
+                                <i class="material-icons">library_books</i>
+                                Livros
+                            </a>
+                        </li>
+                        <li>
+                            <a href="create.html">
+                                <i class="material-icons">add</i>
+                                Novo Anúncio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="accounts.html">
+                                <i class="material-icons">account_circle</i>
+                                Minha Conta
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            
+        
+            </div>
+        </header>
+
+    
+
+
+
+ 
+        <section class="container form">
+                        <form method="POST" action="/">
+
+                        <div class="header">
+                            <h3>Cadastrar Produto</h3>
+                        </div>
+                            
+                        
+                    <div class="fiels">
+                            
+                        <div class="item">
+                            <div>Categoria</div>
+                            <div>
+                                <select name="category_id">
+                                    {% for category in categories %}
+                                    <option value="{{category_id}}" {% if product.category_id == category.id %}selected{%endif%}>
+                                        <!--{{category.name}}-->
+                                    </option>
+                                    {%endfor%}
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div>Descrição</div>
+                            <div>
+                                <!--<input 
+                                    type="url" 
+                                    name="avatar_url"
+                                    placeholder="Título do Anúncio"
+                                    value{{ product.name }}
+                                >-->
+                                <textarea name="description" id="" cols="30" rows="10"{{product.description}}></textarea>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div>Valor</div>
+                            <div>
+                                <input 
+                                    type="text" 
+                                    name="price"
+                                    placeholder="Preço do Produto"
+                                    value{{ product.price }}
+                                >
+                            </div>
+                        </div>
+                        <!--{% if product.old_price %}
+                            <input type="hidden" name="old_price" value={{product.old_price}}>
+                        {% endif %}-->
+
+                        <div class="item">
+                            <div>Quantidade</div>
+                            <div>
+                                <input 
+                                    type="number" 
+                                    name="quantity"
+                                    placeholder="Estoque Disponível"
+                                    value{{ product.quantity }}
+                                >
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div>Dísponível</div>
+                            <div>
+                                <span>
+                                    <input 
+                                        type="radio"
+                                        name="status"
+                                        value="1"
+                                        {% if product.status == '1' %}
+                                            checked
+                                        {% endif %}> Sim
+                                </span>
+                                <span>
+                                    <input 
+                                        type="radio"
+                                        name="status"
+                                        value="0"
+                                        {% if product.status == '0' %}
+                                            checked
+                                        {% endif %}> Não
+                                </span>
+                            </div>
+                        </div>
+             
+
+                    </div>
+                        
+                        <button class="button" type="submit">Salvar</button>
+
+                    </form>
+        </section>
+
+        <footer>Copyright © 1997-2020 arthuranacleto.com, Inc. |  <a href="mailto:arthuranacleto7.dev@gmail.com"> Fale conosco</a> </footer>
+        <script src="/scripts.js"></script>
+    </body>
+</html>
