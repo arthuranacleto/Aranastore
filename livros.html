@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        
+        <title>Aranastore</title>
+        
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <script src="store.js" async></script>
+
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
+    </head>
+
+
+<body>
+
+<header>
+
+    <div class="container">
+        <a href="layout.html" >
+            <div class="logo">
+                <h1>Aranastore</h1>
+                <h2>.COM</h2>
+            </div> 
+        </a>
+    
+        <form class="search" method="GET" action="/search">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Buscar por produtos"
+                {% if search.term %}
+                    value{{search.term}}
+                {%endif%}}
+            >
+        </form>
+
+        <nav class="primary">
+            <ul>
+                <li>
+                    <a href="livros.html">
+                        <i class="material-icons">library_books</i>
+                        Livros
+                    </a>
+                </li>
+                <li>
+                    <a href="create.html">
+                        <i class="material-icons">add</i>
+                        Novo Anúncio
+                    </a>
+                </li>
+                <li>
+                    <a href="accounts.html">
+                        <i class="material-icons">account_circle</i>
+                        Minha Conta
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    
+
+    </div>
+</header>
+    
+<section class="container-content-section">
+
+    
+<div class="cards">
+            
+           <div class="card">
+                    <div class="shop-item">
+                    
+                            <h3 class="small">Schritte international Neu 1</h3> 
+                            <span class="shop-item-title">Success in German Grammar </span>
+                        
+                     
+                            <img class="shop-item-image" src="img/alemão.png">
+                            
+                            <div class="shop-item-details">
+                                <span class="shop-item-price"> <h1>$12.99</h1></span>
+                                <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                            </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="shop-item">
+                
+                        <h3 class="small">Written for English learners in journey to English fluency</h3> 
+                        <span class="shop-item-title">The Five-Step Plan</span>
+                    
+                 
+                        <img class="shop-item-image" src="img/ingles.png">
+                        
+                        <div class="shop-item-details">
+                            <span class="shop-item-price"> <h1>$23.99</h1></span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="shop-item">
+            
+                    <h3 class="small">Slavic languages</h3> 
+                    <span class="shop-item-title">Russian language</span>
+                
+             
+                    <img class="shop-item-image" src="img/russo.png">
+                    
+                    <div class="shop-item-details">
+                        <span class="shop-item-price"> <h1>$59.00</h1></span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="shop-item">
+        
+                <h3 class="small">French Vocab</h3> 
+                <span class="shop-item-title">Spoken French – Nature Idioms</span>
+            
+         
+                <img class="shop-item-image" src="img/francês.png">
+                
+                <div class="shop-item-details">
+                    <span class="shop-item-price"> <h1>$15.93</h1></span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+            
+
+                               
+
+            
+</section>
+
+
+
+
+
+
+
+
+
+<section class="container content-section">
+    <h2 class="section-header">CART</h2>
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price">$0</span>
+    </div>
+    <button class="btn btn-primary btn-purchase" type="button"> <a href="">PURCHASE</a> </button>
+</section>
+
+<footer>Copyright © 1997-2020 arthuranacleto.com, Inc. |  <a href="mailto:arthuranacleto7.dev@gmail.com"> Fale conosco</a> </footer>
+<script src="/scripts.js"></script>
+</body>
+</html>

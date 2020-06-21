@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+        
+        <title>Aranastore</title>
+        
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+
+            <div class="container">
+                <a href="layout.html" >
+                    <div class="logo">
+                        <h1>Aranastore</h1>
+                        <h2>.COM</h2>
+                    </div> 
+                </a>
+            
+                <form class="search" method="GET" action="/search">
+                    <input 
+                        type="text"
+                        name="filter"
+                        placeholder="Buscar por produtos"
+                        {% if search.term %}
+                            value{{search.term}}
+                        {%endif%}}
+                    >
+                </form>
+        
+                <nav class="primary">
+                    <ul>
+                        <li>
+                            <a href="livros.html">
+                                <i class="material-icons">library_books</i>
+                                Livros
+                            </a>
+                        </li>
+                        <li>
+                            <a href="create.html">
+                                <i class="material-icons">add</i>
+                                Novo Anúncio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="accounts.html">
+                                <i class="material-icons">account_circle</i>
+                                Minha Conta
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            
+        
+            </div>
+        </header>
+
+        <section class="shop {{classes}}">
+
+            {% if name %}
+                <h2>{{name}}</h2>
+            {% endif %}
+        
+            <div class="items">
+            
+                {%for product in products%}
+                    <div class="product">
+                        <div 
+                            class="image"
+                            style="background-image: url({{product.img if product.img else '//placehold.it/500x360'}})"
+                        >
+                        </div>
+        
+                        {%if product.oldPrice != product.price%}
+                            <div class="old-price">{{product.oldPrice}}</div>
+                        {%endif%}
+                        <p>{{product.price}}</p>
+                        <h4>{{product.name}}</h4>
+        
+                        <!--"/products/{{product.id}}"--><a href="livros.html" class="button">Ver Produto</a>
+                    
+                    </div>
+                {%endfor%}
+            </div>
+        </section>
+
+        <footer>Copyright © 1997-2020 arthuranacleto.com, Inc. |  <a href="mailto:arthuranacleto7.dev@gmail.com"> Fale conosco</a> </footer>
+        <script src="/scripts.js"></script>
+
+    </body>
+</html>
